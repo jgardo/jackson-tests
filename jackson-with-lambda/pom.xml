@@ -50,7 +50,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.package.MainClass</mainClass>
+                            <mainClass>org.openjdk.jmh.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -67,7 +67,6 @@
                     <source>${javac.target}</source>
                     <target>${javac.target}</target>
                     <compilerArgs>
-                        <arg>-parameters</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
