@@ -1,0 +1,485 @@
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -javaagent:/opt/idea-IC-182.4323.46/lib/idea_rt.jar=46645:/opt/idea-IC-182.4323.46/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/gardziol/repository/jackson-tests/jackson-with-lambda/target/classes:/home/gardziol/repository/jackson-tests/jackson-test-resources/target/classes:/home/gardziol/.m2/repository/com/fasterxml/jackson/core/jackson-databind/3.0.0-SNAPSHOT-lambda/jackson-databind-3.0.0-SNAPSHOT-lambda.jar:/home/gardziol/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/3.0-SNAPSHOT/jackson-annotations-3.0-20191012.195421-64.jar:/home/gardziol/.m2/repository/com/fasterxml/jackson/core/jackson-core/3.0.0-SNAPSHOT/jackson-core-3.0.0-SNAPSHOT.jar:/home/gardziol/.m2/repository/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21.jar:/home/gardziol/.m2/repository/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar:/home/gardziol/.m2/repository/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar dev.jgardo.jackson.benchmark.LambdaBenchmark /primitives/primitives-20.json dev.jgardo.jackson.model.Primitives
+# JMH version: 1.21
+# VM version: JDK 1.8.0_232, OpenJDK 64-Bit Server VM, 25.232-b09
+# VM invoker: /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+# VM options: -javaagent:/opt/idea-IC-182.4323.46/lib/idea_rt.jar=46645:/opt/idea-IC-182.4323.46/bin -Dfile.encoding=UTF-8
+# Warmup: 12 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: dev.jgardo.jackson.benchmark.LambdaBenchmark.benchmark
+# Parameters: (className = dev.jgardo.jackson.model.Primitives, fileName = /primitives/primitives-20.json)
+
+# Run progress: 0,00% complete, ETA 00:00:22
+# Fork: 1 of 1
+# Preparing profilers: LinuxPerfAsmProfiler 
+# Profilers consume stdout and stderr from target VM, use -v EXTRA to copy to console
+# Warmup Iteration   1: 2232673550,000 ns/op
+# Warmup Iteration   2: 2285696,598 ns/op
+# Warmup Iteration   3: 1497585,612 ns/op
+# Warmup Iteration   4: 570509,214 ns/op
+# Warmup Iteration   5: 328910,945 ns/op
+# Warmup Iteration   6: 48137,336 ns/op
+# Warmup Iteration   7: 26489,100 ns/op
+# Warmup Iteration   8: 6841,674 ns/op
+# Warmup Iteration   9: 3725,981 ns/op
+# Warmup Iteration  10: 3785,218 ns/op
+# Warmup Iteration  11: 3465,290 ns/op
+# Warmup Iteration  12: 3526,932 ns/op
+Iteration   1: 3432,165 ns/op
+Iteration   2: 3551,727 ns/op
+Iteration   3: 3620,232 ns/op
+Iteration   4: 3620,709 ns/op
+Iteration   5: 3489,681 ns/op
+Iteration   6: 3489,824 ns/op
+Iteration   7: 3559,018 ns/op
+Iteration   8: 3510,014 ns/op
+Iteration   9: 3521,927 ns/op
+Iteration  10: 3571,182 ns/op
+# Processing profiler results: LinuxPerfAsmProfiler 
+
+
+Result "dev.jgardo.jackson.benchmark.LambdaBenchmark.benchmark":
+  3536,648 ±(99.9%) 90,451 ns/op [Average]
+  (min, avg, max) = (3432,165, 3536,648, 3620,709), stdev = 59,828
+  CI (99.9%): [3446,197, 3627,099] (assumes normal distribution)
+
+Secondary result "dev.jgardo.jackson.benchmark.LambdaBenchmark.benchmark:·asm":
+PrintAssembly processed: 280044 total address lines.
+Perf output processed (skipped 33,149 seconds):
+ Column 1: cycles (10488 events)
+
+Hottest code regions (>10,00% "cycles" events):
+
+....[Hottest Region 1]..............................................................................
+C2, level 4, com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName, version 913 (810 bytes) 
+
+             # {method} {0x00007f7038983e30} &apos;nextFieldName&apos; &apos;()Ljava/lang/String;&apos; in &apos;com/fasterxml/jackson/core/json/ReaderBasedJsonParser&apos;
+             #           [sp+0x50]  (sp of caller)
+             0x00007f7025347a80: mov     0x8(%rsi),%r10d   ;   {no_reloc}
+             0x00007f7025347a84: shl     $0x3,%r10
+             0x00007f7025347a88: cmp     %r10,%rax
+             0x00007f7025347a8b: jne     0x7f7025045ba0    ;   {runtime_call}
+             0x00007f7025347a91: nop
+             0x00007f7025347a94: nopl    0x0(%rax,%rax)
+             0x00007f7025347a9c: nop
+           [Verified Entry Point]
+  0,11%      0x00007f7025347aa0: mov     %eax,0xfffffffffffec000(%rsp)
+  0,10%      0x00007f7025347aa7: push    %rbp
+  0,04%      0x00007f7025347aa8: sub     $0x40,%rsp        ;*synchronization entry
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@-1 (line 857)
+  0,25%      0x00007f7025347aac: mov     %rsi,%rbp
+  0,01%      0x00007f7025347aaf: mov     %r12d,0x58(%rsi)  ;*putfield _numTypesValid
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@2 (line 857)
+  0,03%      0x00007f7025347ab3: mov     0x18(%rsi),%r10d  ;*getfield _currToken
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@6 (line 858)
+  0,16%      0x00007f7025347ab7: cmp     $0xedfa08cc,%r10d  ;   {oop(a &apos;com/fasterxml/jackson/core/JsonToken&apos;)}
+             0x00007f7025347abe: je      0x7f7025348329    ;*if_acmpne
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@12 (line 858)
+  0,04%      0x00007f7025347ac4: movzbl  0xb1(%rsi),%r11d  ;*getfield _tokenIncomplete
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@23 (line 862)
+  0,03%      0x00007f7025347acc: test    %r11d,%r11d
+             0x00007f7025347acf: jne     0x7f702534833d    ;*ifeq
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@26 (line 862)
+  0,05%      0x00007f7025347ad5: mov     0x44(%rsi),%ecx   ;*getfield _inputEnd
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@5 (line 2310)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,13%      0x00007f7025347ad8: mov     0x40(%rsi),%r11d  ;*getfield _inputPtr
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@1 (line 2310)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,04%      0x00007f7025347adc: cmp     %ecx,%r11d
+             0x00007f7025347adf: jnl     0x7f7025348351    ;*if_icmplt
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@8 (line 2310)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,02%      0x00007f7025347ae5: mov     0xb8(%rsi),%r8d   ;*getfield _inputBuffer
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@24 (line 2315)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,01%      0x00007f7025347aec: mov     %r11d,%r9d
+  0,14%      0x00007f7025347aef: incl    %r9d              ;*iadd
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@34 (line 2315)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,10%      0x00007f7025347af2: mov     %r9d,0x40(%rsi)   ;*putfield _inputPtr
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@35 (line 2315)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,01%      0x00007f7025347af6: mov     0xc(%r12,%r8,8),%edi  ; implicit exception: dispatches to 0x00007f7025348916
+  0,05%      0x00007f7025347afb: cmp     %edi,%r11d
+             0x00007f7025347afe: jnb     0x7f702534827e
+  0,21%      0x00007f7025347b04: lea     (%r12,%r8,8),%r14
+  0,07%      0x00007f7025347b08: movzwl  0x10(%r14,%r11,2),%r10d  ;*caload
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@38 (line 2315)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,03%      0x00007f7025347b0e: cmp     $0x20,%r10d
+             0x00007f7025347b12: jle     0x7f7025348315    ;*if_icmple
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@43 (line 2316)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,08%      0x00007f7025347b18: cmp     $0x2f,%r10d
+             0x00007f7025347b1c: je      0x7f7025348369    ;*if_icmpeq
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@49 (line 2317)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,03%      0x00007f7025347b22: cmp     $0x23,%r10d
+             0x00007f7025347b26: je      0x7f702534837d    ;*if_icmpne
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipWSOrEnd@55 (line 2317)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@34 (line 865)
+  0,15%      0x00007f7025347b2c: mov     %r12d,0x7c(%rsi)  ;*putfield _binaryValue
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@55 (line 871)
+  0,02%      0x00007f7025347b30: cmp     $0x5d,%r10d
+             0x00007f7025347b34: je      0x7f7025348391    ;*if_icmpeq
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@61 (line 872)
+  0,15%      0x00007f7025347b3a: mov     0x4c(%rsi),%ebx   ;*getfield _currInputRowStart
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_updateLocation@27 (line 2784)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_closeScope@52 (line 2844)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@72 (line 873)
+             0x00007f7025347b3d: mov     0x48(%rsi),%esi   ;*getfield _currInputRow
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_updateLocation@18 (line 2783)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_closeScope@52 (line 2844)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@72 (line 873)
+  0,08%      0x00007f7025347b40: mov     0x90(%rbp),%edx   ;*getfield _parsingContext
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@78 (line 876)
+  0,03%      0x00007f7025347b46: cmp     $0x7d,%r10d
+             0x00007f7025347b4a: je      0x7f7025347eca    ;*if_icmpne
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@67 (line 872)
+  0,21%      0x00007f7025347b50: mov     0xc(%r12,%rdx,8),%r13d  ;*getfield _type
+                                                           ; - com.fasterxml.jackson.core.json.JsonReadContext::expectComma@13 (line 190)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@81 (line 876)
+                                                           ; implicit exception: dispatches to 0x00007f7025348929
+  0,01%      0x00007f7025347b55: mov     0x10(%r12,%rdx,8),%eax
+  0,06%      0x00007f7025347b5a: incl    %eax              ;*iadd
+                                                           ; - com.fasterxml.jackson.core.json.JsonReadContext::expectComma@6 (line 189)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@81 (line 876)
+  0,02%      0x00007f7025347b5c: mov     %eax,0x10(%r12,%rdx,8)  ;*putfield _index
+                                                           ; - com.fasterxml.jackson.core.json.JsonReadContext::expectComma@8 (line 189)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@81 (line 876)
+  0,09%      0x00007f7025347b61: test    %r13d,%r13d
+             0x00007f7025347b64: je      0x7f7025347f22    ;*ifeq
+                                                           ; - com.fasterxml.jackson.core.json.JsonReadContext::expectComma@16 (line 190)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@81 (line 876)
+  0,06%      0x00007f7025347b6a: test    %eax,%eax
+             0x00007f7025347b6c: jle     0x7f7025347f22    ;*ifle
+                                                           ; - com.fasterxml.jackson.core.json.JsonReadContext::expectComma@20 (line 190)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@81 (line 876)
+  0,10%      0x00007f7025347b72: cmp     $0x2c,%r10d
+             0x00007f7025347b76: jne     0x7f7025348471    ;*if_icmpeq
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipComma@3 (line 2250)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@89 (line 877)
+  0,17%      0x00007f7025347b7c: cmp     %ecx,%r9d
+             0x00007f7025347b7f: jnl     0x7f7025348485    ;*if_icmpge
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipComma@49 (line 2253)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@89 (line 877)
+             0x00007f7025347b85: mov     %r11d,%edx
+  0,04%      0x00007f7025347b88: add     $0x2,%edx         ;*iadd
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipComma@63 (line 2254)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@89 (line 877)
+             0x00007f7025347b8b: mov     %edx,0x40(%rbp)   ;*putfield _inputPtr
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipComma@64 (line 2254)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@89 (line 877)
+  0,14%      0x00007f7025347b8e: cmp     %edi,%r9d
+             0x00007f7025347b91: jnb     0x7f70253482f9
+             0x00007f7025347b97: movsxd  %r11d,%r10
+  0,08%      0x00007f7025347b9a: movzwl  0x12(%r14,%r10,2),%r10d  ;*caload
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipComma@67 (line 2254)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@89 (line 877)
+             0x00007f7025347ba0: cmp     $0x20,%r10d
+             0x00007f7025347ba4: jle     0x7f702534845d    ;*if_icmple
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipComma@72 (line 2255)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@89 (line 877)
+  0,20%      0x00007f7025347baa: cmp     $0x2f,%r10d
+             0x00007f7025347bae: je      0x7f702534849d    ;*if_icmpeq
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipComma@78 (line 2256)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@89 (line 877)
+  0,07%      0x00007f7025347bb4: cmp     $0x23,%r10d
+             0x00007f7025347bb8: je      0x7f70253484b1    ;*if_icmpne
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipComma@84 (line 2256)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@89 (line 877)
+  0,12%      0x00007f7025347bbe: mov     $0x200,%r8d
+             0x00007f7025347bc4: and     0x88(%rbp),%r8d   ;*iand
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@100 (line 878)
+  0,04%      0x00007f7025347bcb: test    %r8d,%r8d
+             0x00007f7025347bce: jne     0x7f70253484c5    ;*getfield _inputPtr
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_updateNameLocation@1 (line 2790)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@146 (line 891)
+  0,12%      0x00007f7025347bd4: cmp     $0x2,%r13d
+             0x00007f7025347bd8: jne     0x7f7025347f2a    ;*if_icmpne
+                                                           ; - com.fasterxml.jackson.core.TokenStreamContext::inObject@5 (line 94)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@127 (line 885)
+  0,20%      0x00007f7025347bde: mov     $0x1,%r8d         ;*ireturn
+                                                           ; - com.fasterxml.jackson.core.TokenStreamContext::inObject@13 (line 94)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@127 (line 885)
+             0x00007f7025347be4: cmp     $0x2,%r13d
+             0x00007f7025347be8: jne     0x7f70253483e9    ;*ifne
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@130 (line 885)
+  0,21%      0x00007f7025347bee: mov     %esi,0xa8(%rbp)   ;*putfield _nameStartRow
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_updateNameLocation@16 (line 2792)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@146 (line 891)
+  0,03%      0x00007f7025347bf4: mov     %edx,%r11d
+  0,05%      0x00007f7025347bf7: sub     %ebx,%r11d
+             0x00007f7025347bfa: mov     %r11d,0xac(%rbp)  ;*putfield _nameStartCol
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_updateNameLocation@26 (line 2793)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@146 (line 891)
+  0,15%      0x00007f7025347c01: movsxd  %edx,%r11
+  0,01%      0x00007f7025347c04: mov     %r11,0xa0(%rbp)   ;*putfield _nameStartOffset
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_updateNameLocation@8 (line 2791)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@146 (line 891)
+  0,04%      0x00007f7025347c0b: cmp     $0x22,%r10d
+             0x00007f7025347c0f: jne     0x7f70253483a5    ;*invokespecial _updateNameLocation
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@146 (line 891)
+             0x00007f7025347c15: mov     %rbp,%rsi
+  0,13%      0x00007f7025347c18: nop
+             0x00007f7025347c1b: callq   0x7f7025045de0    ; OopMap{rbp=Oop off=416}
+                                                           ;*invokevirtual _parseName
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@156 (line 892)
+                                                           ;   {optimized virtual_call}
+  0,14%      0x00007f7025347c20: mov     0x90(%rbp),%edi   ;*getfield _parsingContext
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@169 (line 893)
+  0,04%      0x00007f7025347c26: mov     0x20(%r12,%rdi,8),%r10d  ;*getfield _dups
+                                                           ; - com.fasterxml.jackson.core.json.JsonReadContext::setCurrentName@6 (line 195)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@173 (line 893)
+                                                           ; implicit exception: dispatches to 0x00007f7025348939
+  0,17%      0x00007f7025347c2b: lea     (%r12,%rdi,8),%r11
+             0x00007f7025347c2f: mov     %rax,%r8
+  0,24%      0x00007f7025347c32: mov     %rax,%r9
+             0x00007f7025347c35: shr     $0x3,%r9
+  0,10%      0x00007f7025347c39: mov     %r9d,0x28(%r12,%rdi,8)
+  0,17%      0x00007f7025347c3e: shr     $0x9,%r11
+  0,01%      0x00007f7025347c42: movabs  $0x7f7036473000,%r9
+  0,07%      0x00007f7025347c4c: mov     %r12l,(%r9,%r11)  ;*putfield _currentName
+                                                           ; - com.fasterxml.jackson.core.json.JsonReadContext::setCurrentName@2 (line 194)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@173 (line 893)
+  0,35%      0x00007f7025347c50: test    %r10d,%r10d
+             0x00007f7025347c53: jne     0x7f70253482d9    ;*getfield _dups
+                                                           ; - com.fasterxml.jackson.core.json.JsonReadContext::setCurrentName@6 (line 195)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@173 (line 893)
+  0,01%      0x00007f7025347c59: movl    $0xedfa08cc,0x18(%rbp)  ;*putfield _currToken
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@180 (line 894)
+                                                           ;   {oop(a &apos;com/fasterxml/jackson/core/JsonToken&apos;)}
+  0,01%      0x00007f7025347c60: mov     0x40(%rbp),%r9d   ;*getfield _inputPtr
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@1 (line 2108)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+             0x00007f7025347c64: mov     0x44(%rbp),%r11d  ;*getfield _inputEnd
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@7 (line 2108)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,23%      0x00007f7025347c68: mov     %r11d,0x24(%rsp)
+  0,05%      0x00007f7025347c6d: mov     %rbp,%r10
+             0x00007f7025347c70: mov     %r9d,%r11d
+  0,18%      0x00007f7025347c73: add     $0x4,%r11d        ;*iadd
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@5 (line 2108)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,01%      0x00007f7025347c77: shr     $0x9,%r10
+  0,02%      0x00007f7025347c7b: movabs  $0x7f7036473000,%rcx
+             0x00007f7025347c85: mov     %r12l,(%rcx,%r10)  ;*putfield _currToken
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@180 (line 894)
+  0,11%      0x00007f7025347c89: cmp     0x24(%rsp),%r11d
+             0x00007f7025347c8e: jnl     0x7f7025348401    ;*if_icmplt
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@10 (line 2108)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,13%      0x00007f7025347c94: mov     0xb8(%rbp),%r14d  ;*getfield _inputBuffer
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@20 (line 2111)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+             0x00007f7025347c9b: mov     0xc(%r12,%r14,8),%esi  ; implicit exception: dispatches to 0x00007f702534894d
+  0,18%      0x00007f7025347ca0: cmp     %esi,%r9d
+             0x00007f7025347ca3: jnb     0x7f7025348299
+  0,01%      0x00007f7025347ca9: lea     (%r12,%r14,8),%rcx
+  0,07%      0x00007f7025347cad: movzwl  0x10(%rcx,%r9,2),%r10d  ;*caload
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@27 (line 2111)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,03%      0x00007f7025347cb3: cmp     $0x3a,%r10d
+             0x00007f7025347cb7: jne     0x7f70253483b9    ;*if_icmpne
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@32 (line 2112)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,16%      0x00007f7025347cbd: mov     %r9d,%r10d
+             0x00007f7025347cc0: add     $0x6,%r10d        ;*iadd
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_matchFalse@7 (line 2541)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@370 (line 925)
+  0,05%      0x00007f7025347cc4: mov     %r9d,%r11d
+  0,01%      0x00007f7025347cc7: incl    %r11d             ;*iadd
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@45 (line 2113)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,16%      0x00007f7025347cca: mov     %r11d,0x40(%rbp)  ;*putfield _inputPtr
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@47 (line 2113)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+             0x00007f7025347cce: cmp     %esi,%r10d
+             0x00007f7025347cd1: jnb     0x7f70253482b9
+  0,03%      0x00007f7025347cd7: movsxd  %r9d,%rax
+             0x00007f7025347cda: movzwl  0x12(%rcx,%rax,2),%edx  ;*caload
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@50 (line 2113)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,17%      0x00007f7025347cdf: cmp     $0x20,%edx
+             0x00007f7025347ce2: jle     0x7f70253483d1    ;*if_icmple
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@55 (line 2114)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,01%      0x00007f7025347ce8: cmp     $0x2f,%edx
+             0x00007f7025347ceb: je      0x7f7025348419    ;*if_icmpeq
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@61 (line 2115)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,03%      0x00007f7025347cf1: cmp     $0x23,%edx
+             0x00007f7025347cf4: je      0x7f7025348431    ;*if_icmpne
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@67 (line 2115)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+             0x00007f7025347cfa: mov     %r8,0x10(%rsp)
+  0,11%      0x00007f7025347cff: mov     %rbp,0x8(%rsp)
+  0,01%      0x00007f7025347d04: mov     %r9d,%r8d
+  0,02%      0x00007f7025347d07: sub     0x4c(%rbp),%r8d
+  0,04%      0x00007f7025347d0b: mov     0x48(%rbp),%ebp
+  0,21%      0x00007f7025347d0e: mov     0x8(%rsp),%rbx
+             0x00007f7025347d13: mov     %ebp,0x50(%rbx)   ;*putfield _tokenInputRow
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_updateLocation@21 (line 2783)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@189 (line 897)
+  0,13%      0x00007f7025347d16: mov     %r9d,%ebx
+  0,02%      0x00007f7025347d19: add     $0x2,%ebx         ;*iadd
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@82 (line 2118)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,15%      0x00007f7025347d1c: mov     0x8(%rsp),%rbp
+  0,01%      0x00007f7025347d21: mov     %ebx,0x40(%rbp)   ;*putfield _inputPtr
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_skipColon@83 (line 2118)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@184 (line 895)
+  0,56%      0x00007f7025347d24: add     $0x2,%r8d
+             0x00007f7025347d28: mov     %r8d,0x54(%rbp)   ;*putfield _tokenInputCol
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_updateLocation@31 (line 2784)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@189 (line 897)
+  0,31%      0x00007f7025347d2c: movsxd  %ebx,%r8
+  0,01%      0x00007f7025347d2f: add     0x20(%rbp),%r8
+  0,07%      0x00007f7025347d33: mov     %r8,0x28(%rbp)    ;*putfield _tokenInputTotal
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_updateLocation@13 (line 2782)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@189 (line 897)
+             0x00007f7025347d37: cmp     $0x22,%edx
+             0x00007f7025347d3a: je      0x7f7025348449    ;*if_icmpne
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@195 (line 898)
+  0,19%      0x00007f7025347d40: vmovd   %edi,%xmm1
+             0x00007f7025347d44: movzwl  0x1a(%rcx,%rax,2),%r8d  ;*caload
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_matchTrue@55 (line 2528)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@392 (line 933)
+  0,05%      0x00007f7025347d4a: movzwl  0x18(%rcx,%rax,2),%edi  ;*caload
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_matchTrue@44 (line 2527)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@392 (line 933)
+             0x00007f7025347d4f: movzwl  0x16(%rcx,%rax,2),%r13d  ;*caload
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_matchTrue@33 (line 2527)
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@392 (line 933)
+  0,13%      0x00007f7025347d55: cmp     $0x66,%edx
+             0x00007f7025347d58: je      0x7f7025347e38
+             0x00007f7025347d5e: cmp     $0x66,%edx
+             0x00007f7025347d61: jnle    0x7f7025347e01
+  0,10%      0x00007f7025347d67: cmp     $0x30,%edx
+         ╭   0x00007f7025347d6a: jl      0x7f7025347ddd
+  0,02%  │   0x00007f7025347d6c: cmp     $0x5b,%edx
+         │╭  0x00007f7025347d6f: je      0x7f7025347dcf
+  0,06%  ││  0x00007f7025347d71: cmp     $0x5b,%edx
+         ││  0x00007f7025347d74: jnle    0x7f7025347e23
+  0,02%  ││  0x00007f7025347d7a: cmp     $0x3a,%edx
+         ││  0x00007f7025347d7d: jnl     0x7f7025347e23    ;*lookupswitch
+         ││                                                ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@213 (line 908)
+  0,11%  ││  0x00007f7025347d83: cmp     $0x30,%edx
+         ││  0x00007f7025347d86: je      0x7f70253485d0    ;*if_icmpne
+         ││                                                ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_parsePosNumber@18 (line 1247)
+         ││                                                ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@362 (line 922)
+         ││  0x00007f7025347d8c: mov     0x24(%rsp),%r10d
+  0,12%  ││  0x00007f7025347d91: cmp     %r10d,%ebx
+         ││  0x00007f7025347d94: jnl     0x7f70253485f5    ;*if_icmplt
+         ││                                                ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_parsePosNumber@34 (line 1262)
+         ││                                                ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@362 (line 922)
+  0,01%  ││  0x00007f7025347d9a: cmp     %esi,%ebx
+         ││  0x00007f7025347d9c: jnb     0x7f70253484dd
+  0,05%  ││  0x00007f7025347da2: movsxd  %esi,%r10
+  0,01%  ││  0x00007f7025347da5: mov     0x24(%rsp),%r8d
+  0,14%  ││  0x00007f7025347daa: movsxd  %r8d,%r8
+  0,01%  ││  0x00007f7025347dad: decq    %r8
+  0,10%  ││  0x00007f7025347db0: cmp     %r10,%r8
+         ││  0x00007f7025347db3: jnb     0x7f70253484dd    ;*aload_0
+         ││                                                ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_parsePosNumber@49 (line 1266)
+         ││                                                ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@362 (line 922)
+  0,03%  ││  0x00007f7025347db9: mov     $0xffffffff,%edx
+  0,08%  ││  0x00007f7025347dbe: sub     %r9d,%edx
+  0,03%  ││  0x00007f7025347dc1: mov     $0xffffffff,%r10d
+  0,04%  ││  0x00007f7025347dc7: mov     %r10d,%ebp
+  0,01%  ││  0x00007f7025347dca: jmpq    0x7f7025347f35
+         │↘  0x00007f7025347dcf: mov     $0xedfa08a4,%r10d  ;   {oop(a &apos;com/fasterxml/jackson/core/JsonToken&apos;)}
+         │   0x00007f7025347dd5: mov     %rbp,%rcx
+         │   0x00007f7025347dd8: jmpq    0x7f7025347e9d
+         ↘   0x00007f7025347ddd: cmp     $0x2d,%edx
+             0x00007f7025347de0: jne     0x7f7025347e23    ;*lookupswitch
+                                                           ; - com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName@213 (line 908)
+             0x00007f7025347de2: mov     %rbp,%rsi
+             0x00007f7025347de5: mov     0x10(%rsp),%rbp
+             0x00007f7025347dea: nop
+             0x00007f7025347deb: callq   0x7f7025045de0    ; OopMap{rbp=Oop [8]=Oop [16]=Oop off=880}
+....................................................................................................
+ 10,38%  <total for region 1>
+
+....[Hottest Regions]...............................................................................
+ 10,38%         C2, level 4  com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName, version 913 (810 bytes) 
+  9,19%         C2, level 4  com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_parseName, version 909 (813 bytes) 
+  6,32%         C1, level 3  java.lang.invoke.InvokerBytecodeGenerator::emitImplicitConversion, version 212 (122 bytes) 
+  3,06%         C2, level 4  com.fasterxml.jackson.core.json.JsonParserBase::_parseNumericValue, version 990 (750 bytes) 
+  2,83%         C2, level 4  sun.misc.FloatingDecimal$ASCIIToBinaryBuffer::doubleValue, version 1002 (397 bytes) 
+  2,73%         C2, level 4  com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName, version 913 (282 bytes) 
+  2,73%         C2, level 4  sun.misc.FloatingDecimal::readJavaFormatString, version 991 (272 bytes) 
+  2,52%         C2, level 4  com.fasterxml.jackson.databind.deser.BeanDeserializer::_vanillaDeserialize, version 1150 (378 bytes) 
+  2,36%         C2, level 4  com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName, version 913 (166 bytes) 
+  2,30%         C2, level 4  sun.misc.FloatingDecimal::readJavaFormatString, version 991 (154 bytes) 
+  2,29%         C2, level 4  com.fasterxml.jackson.databind.deser.BeanDeserializer::_vanillaDeserialize, version 1150 (382 bytes) 
+  2,13%         C2, level 4  com.fasterxml.jackson.databind.deser.BeanDeserializer::_vanillaDeserialize, version 1150 (390 bytes) 
+  2,03%         C2, level 4  com.fasterxml.jackson.databind.deser.BeanDeserializer::_vanillaDeserialize, version 1150 (372 bytes) 
+  1,97%         C2, level 4  com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextToken, version 904 (116 bytes) 
+  1,95%         C2, level 4  com.fasterxml.jackson.databind.deser.std.NumberDeserializers$LongDeserializer::deserialize, version 1101 (254 bytes) 
+  1,86%         C2, level 4  com.fasterxml.jackson.databind.deser.std.NumberDeserializers$DoubleDeserializer::deserialize, version 1099 (210 bytes) 
+  1,72%         C1, level 3  java.lang.invoke.InvokerBytecodeGenerator::emitImplicitConversion, version 212 (14 bytes) 
+  1,42%         C2, level 4  sun.misc.FloatingDecimal::readJavaFormatString, version 991 (187 bytes) 
+  1,41%         C2, level 4  com.fasterxml.jackson.databind.deser.BeanDeserializer::_vanillaDeserialize, version 1150 (212 bytes) 
+  1,25%        runtime stub  StubRoutines::jshort_disjoint_arraycopy (150 bytes) 
+ 37,56%  <...other 515 warm regions...>
+....................................................................................................
+ 99,99%  <totals>
+
+....[Hottest Methods (after inlining)]..............................................................
+ 17,36%         C2, level 4  com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextFieldName, version 913 
+ 14,93%         C2, level 4  com.fasterxml.jackson.databind.deser.BeanDeserializer::_vanillaDeserialize, version 1150 
+ 10,35%         C2, level 4  com.fasterxml.jackson.core.json.ReaderBasedJsonParser::_parseName, version 909 
+  8,04%         C1, level 3  java.lang.invoke.InvokerBytecodeGenerator::emitImplicitConversion, version 212 
+  7,07%         C2, level 4  sun.misc.FloatingDecimal::readJavaFormatString, version 991 
+  4,71%         C2, level 4  com.fasterxml.jackson.core.json.JsonParserBase::_parseNumericValue, version 990 
+  2,83%         C2, level 4  sun.misc.FloatingDecimal$ASCIIToBinaryBuffer::doubleValue, version 1002 
+  2,58%         C2, level 4  com.fasterxml.jackson.core.json.ReaderBasedJsonParser::nextToken, version 904 
+  2,37%         C2, level 4  com.fasterxml.jackson.core.base.TextualTSFactory::createParser, version 1254 
+  2,15%   [kernel.kallsyms]  [unknown] 
+  1,95%         C2, level 4  com.fasterxml.jackson.databind.deser.std.NumberDeserializers$LongDeserializer::deserialize, version 1101 
+  1,92%         C2, level 4  com.fasterxml.jackson.databind.ObjectMapper::readValue, version 1288 
+  1,86%         C2, level 4  com.fasterxml.jackson.databind.deser.std.NumberDeserializers$DoubleDeserializer::deserialize, version 1099 
+  1,76%           libjvm.so  [unknown] 
+  1,75%         C2, level 4  com.fasterxml.jackson.databind.deser.std.NumberDeserializers$IntegerDeserializer::deserialize, version 1096 
+  1,46%        runtime stub  StubRoutines::jshort_disjoint_arraycopy 
+  1,17%         C2, level 4  com.fasterxml.jackson.databind.deser.std.NumberDeserializers$ShortDeserializer::deserialize, version 1239 
+  0,96%         C2, level 4  com.fasterxml.jackson.databind.util.LambdaMetafactoryUtils$$Lambda$50::accept, version 1127 
+  0,89%         C2, level 4  com.fasterxml.jackson.databind.util.LambdaMetafactoryUtils$$Lambda$12::accept, version 1097 
+  0,80%         C2, level 4  com.fasterxml.jackson.databind.deser.std.NumberDeserializers$FloatDeserializer::deserialize, version 1230 
+ 13,06%  <...other 118 warm methods...>
+....................................................................................................
+ 99,99%  <totals>
+
+....[Distribution by Source]........................................................................
+ 82,65%         C2, level 4
+  8,06%         C1, level 3
+  2,59%        libc-2.27.so
+  2,15%   [kernel.kallsyms]
+  1,78%           libjvm.so
+  1,47%        runtime stub
+  1,16%    libfcml.so.0.0.0
+  0,09%  libpthread-2.27.so
+  0,04%         interpreter
+....................................................................................................
+ 99,99%  <totals>
+
+
+
+# Run complete. Total time: 00:00:48
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                               (className)                      (fileName)  Mode  Cnt     Score    Error  Units
+LambdaBenchmark.benchmark       dev.jgardo.jackson.model.Primitives  /primitives/primitives-20.json  avgt   10  3536,648 ± 90,451  ns/op
+LambdaBenchmark.benchmark:·asm  dev.jgardo.jackson.model.Primitives  /primitives/primitives-20.json  avgt            NaN             ---
+
+Process finished with exit code 0
+
